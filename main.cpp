@@ -5,27 +5,30 @@ using namespace std;
 
 int main(){
 
-    Arreglo arr;
-    arr.insertar_final("una");
-    arr.insertar_final("prueba");
-    arr.insertar_final("para");
-    arr.insertar_final("la");
-    arr.insertar_final("actividad 12");
+    Arreglo <string> arr;
     arr.insertar_final("sobre");
-    arr.insertar_final("arreglos");
-    arr.insertar_final("dinamicos");
-
-    cout<<"8 strings al final:"<<endl;
+    arr.insertar_final("plantillas");
+    arr.insertar_inicio("13");
+    arr.insertar_inicio("Actividad");
+    
+    cout<<"Insertar al final e insertar al inicio: "<<endl;
     for(int i=0;i<arr.size();i++)
         cout<< arr[i] << " ";
     
-    cout<<endl<<endl<<"8 strings al final mas 2 al inicio:"<<endl;
-    arr.insertar_inicio("es");
-    arr.insertar_inicio("Esto");
+    arr.insertar("Diego",2);
 
+    cout<<endl<<endl<<"Insertando un elemento en la posicion 2:"<<endl;
     for(int i=0;i<arr.size();i++)
         cout<< arr[i] << " ";
 
+    arr.eliminar(1);
+    arr.eliminar_final();
+    arr.eliminar_inicio();
+    
+
+    cout<<endl<<endl<<"Eliminar la posicion 1, el inicio y el final del arreglo"<<endl;
+    for(int i=0;i<arr.size();i++)
+        cout<< arr[i] << " ";
     
     return 0;
 }
