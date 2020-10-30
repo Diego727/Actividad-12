@@ -25,8 +25,16 @@ class Arreglo{
         void eliminar_final();
         void eliminar(const int &);
 
+        T* busqueda_lineal(const T&);
+        Arreglo<T*> buscar_todos(const  T&);
+
         int size();
+
         T operator[](const int&);
+        friend Arreglo<T>& operator <<(Arreglo<T> &a,const T&e){
+            a.insertar_final(e);
+            return a;
+        };
     
 };
 
@@ -145,6 +153,27 @@ void Arreglo<T>::eliminar(const int &x){
 
     for(int i=x; i<count;i++)
         arreglo[i] = arreglo[i+1];
+}
+
+template <class T>
+T* Arreglo<T>::busqueda_lineal(const T &e){
+    for(int i = 0; i<count; i++){
+        if(e == arreglo[i])
+            return &arreglo[i];
+    }
+
+    return nullptr;
+}
+
+template <class T>
+Arreglo<T*> Arreglo<T>::buscar_todos(const T &e){
+    Arreglo<T*> ptrs;
+    for(int i = 0; i<count; i++){
+        if(e == arreglo[i])
+            ptrs.insertar_final(&arreglo[i]);
+    }
+
+    return ptrs;
 }
 
 template<class T>
