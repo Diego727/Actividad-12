@@ -32,7 +32,7 @@ int main(){
     if(ptr != nullptr)
         cout<< *ptr<<endl;
     else
-        cout<<"No se ha el elemento con el procesaor "<< aux2.getCpu() <<endl;
+        cout<<"No se ha encontrado el elemento con el procesaor "<< aux2.getCpu() <<endl;
 
     Arreglo<Computadora*> ptrs = computadoras.buscar_todos(aux);
     cout<<endl<<"Buscar todos los elementos con el procesador i7 10700"<<endl;
